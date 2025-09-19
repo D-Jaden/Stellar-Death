@@ -18,7 +18,7 @@ class StellarDeathSimulation {
             coreColor: '#ff4444',
             nebulaColor: '#4444ff',
             coreSize: 1.0,
-            expansionRadius: 5,
+            expansionRadius: 10,
             particleCount: 2000,
             animationSpeed: 1.0,
             turbulence: 0.5,
@@ -82,7 +82,6 @@ class StellarDeathSimulation {
         // Handle window resize
         window.addEventListener('resize', () => this.onWindowResize());
     }
-
     
     createDyingStar() {
         // Core of the dying star
@@ -411,6 +410,7 @@ class StellarDeathSimulation {
         // Reset rings
         this.nebulaRings.forEach(ring => {
             ring.rotation.set(
+                Math.random() * Math.PI,
                 Math.random() * Math.PI,
                 Math.random() * Math.PI
             );
