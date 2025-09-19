@@ -34,7 +34,7 @@ body {
 #controls {
     position: fixed;
     top: 0;
-    left: -300px; /* Hidden by default */
+    left: -300px;
     width: 280px;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
@@ -49,11 +49,6 @@ body {
     left: 0;
 }
 
-.value-display {
-    font-weight: bold;
-}
-
-/* Add overlay for when menu is open */
 #overlay {
     position: fixed;
     top: 0;
@@ -238,26 +233,38 @@ h3 {
     background: rgba(255, 107, 107, 0.8);
 }
 
-/* Responsive design */
+/* Desktop: always show controls, hide hamburger and overlay */
+@media (min-width: 769px) {
+    #controls {
+        left: 0;
+    }
+    #hamburger {
+        display: none;
+    }
+    #overlay {
+        display: none !important;
+    }
+}
+
+/* Mobile: hamburger menu, full-width controls */
 @media (max-width: 768px) {
     #controls {
-        top: 10px;
-        left: 10px;
-        right: 10px;
-        min-width: auto;
-        max-width: none;
+        width: calc(100% - 20px);
+        left: -100vw;
+        transition: left 0.3s ease;
     }
-    
+    #controls.active {
+        left: 10px;
+    }
+    .control-group button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
     #info {
         bottom: 10px;
         right: 10px;
         left: 10px;
         max-width: none;
-    }
-    
-    .control-group button {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 8px;
     }
 }
