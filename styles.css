@@ -266,20 +266,13 @@ h3 {
         left: 10px;
     }
     .control-group button {
-        width: 80%;
+        width: 60%;
+        height:50%;
         margin-right: 0;
         margin-bottom: 8px;
     }
     #info {
-        bottom: 10px;
-        left: 10px;
-        max-width: 69%;
-        max-height:23%;
+        display: none; 
     }
-    #info h4{
-        font-size:8px;
-    }
-    #info p{
-        font-size:5px;
-    }
+
 }
