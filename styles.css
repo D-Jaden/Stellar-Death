@@ -34,7 +34,7 @@ body {
 #controls {
     position: fixed;
     top: 0;
-    left: -300px; /* Hidden by default */
+    left: -300px;
     width: 280px;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
@@ -49,11 +49,6 @@ body {
     left: 0;
 }
 
-.value-display {
-    font-weight: bold;
-}
-
-/* Add overlay for when menu is open */
 #overlay {
     position: fixed;
     top: 0;
@@ -185,7 +180,7 @@ h3 {
 #info {
     position: absolute;
     bottom: 20px;
-    left: 20px;
+    right: 20px;
     background: rgba(0, 0, 0, 0.85);
     padding: 20px;
     border-radius: 12px;
@@ -238,24 +233,20 @@ h3 {
     background: rgba(255, 107, 107, 0.8);
 }
 
-/* Desktop: always show controls, hide hamburger and overlay */
+/* Desktop: hide overlay even when active */
 @media (min-width: 769px) {
-    #controls {
-        left: 0;
-    }
-    #hamburger {
-        display: none;
+    #overlay {
+        display: none !important;
     }
     #info {
         bottom: 10px;
         right: 10px;
-        left: 10px;
         max-width: 20%;
         max-height:40%;
     }
 }
 
-/* Mobile: hamburger menu, full-width controls */
+/* Mobile: full-width controls */
 @media (max-width: 768px) {
     #controls {
         width: calc(100% - 20px);
@@ -274,5 +265,4 @@ h3 {
     #info {
         display: none; 
     }
-
 }
